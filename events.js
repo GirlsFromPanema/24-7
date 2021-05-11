@@ -4,7 +4,7 @@ module.exports = (client, Discord, ee) => {
 
     client.on("ready", () => {
         console.log(`Logged in as ${client.user.tag}`)
-        client.user.setActivity(`${client.guilds.cache.map(s => s.memberCount).reduce((a, b) => a + b)} Servers || *setup`, { type: 'WATCHING' })
+        client.user.setActivity(`${client.guilds.cache.map(s => s.serverCount).reduce((a, b) => a + b)} Servers || *setup`, { type: 'WATCHING' })
 
         setInterval(async ()=>{
             for(const guild of client.guilds.cache.array()){
